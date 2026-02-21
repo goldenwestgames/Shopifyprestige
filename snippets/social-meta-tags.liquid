@@ -27,7 +27,7 @@ Validate your Pinterest rich pins
   <meta property="og:title" content="{{ collection.title | strip_html | escape }}">
 {%- else -%}
   <meta property="og:type" content="website">
-  <meta property="og:title" content="{{ page_title | escape }}">
+  <meta property="og:title" content="{{ page_title | escape }}{% if request.page_type == 'index' %} | {{ shop.name }}{% endif %}">
 {%- endif -%}
 
 {%- if page_image -%}
@@ -39,6 +39,8 @@ Validate your Pinterest rich pins
 
 {%- if page_description -%}
   <meta property="og:description" content="{{ page_description | escape }}">
+{%- elsif request.page_type == 'index' -%}
+  <meta property="og:description" content="Washington's largest billiard showroom. Premium pool tables, cues, and accessories. Free delivery and installation in the Puget Sound area. Since 1947.">
 {%- endif -%}
 
 <meta property="og:url" content="{{ canonical_url }}">
@@ -67,8 +69,14 @@ More information:
   <meta name="twitter:title" content="{{ collection.title }}">
   <meta name="twitter:description" content="{{ collection.description | strip_html | truncatewords: 140, '' | escape }}">
 {%- else -%}
-  <meta name="twitter:title" content="{{ page_title | escape }}">
-  <meta name="twitter:description" content="{{ page_description | default: page_title | escape }}">
+  <meta name="twitter:title" content="{{ page_title | escape }}{% if request.page_type == 'index' %} | {{ shop.name }}{% endif %}">
+  {%- if page_description -%}
+    <meta name="twitter:description" content="{{ page_description | escape }}">
+  {%- elsif request.page_type == 'index' -%}
+    <meta name="twitter:description" content="Washington's largest billiard showroom. Premium pool tables, cues, and accessories. Free delivery and installation in the Puget Sound area. Since 1947.">
+  {%- else -%}
+    <meta name="twitter:description" content="{{ page_title | escape }}">
+  {%- endif -%}
 {%- endif -%}
 
 {%- if page_image -%}

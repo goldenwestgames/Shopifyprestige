@@ -1,1 +1,57 @@
-{"type":"footer","name":"Footer group","sections":{"text-with-icons":{"type":"text-with-icons","blocks":{"icon-1":{"type":"item","settings":{"title":"Free delivery worldwide"}},"icon-2":{"type":"item","settings":{"title":"Satisfied or refunded"}},"icon-3":{"type":"item","settings":{"title":"Top-notch support"}},"icon-4":{"type":"item","settings":{"title":"Secure payments"}}},"block_order":["icon-1","icon-2","icon-3","icon-4"],"settings":{}},"footer":{"type":"footer","blocks":{"newsletter":{"type":"newsletter","settings":{}},"links":{"type":"links","settings":{"menu":"footer","show_menu_title":true}},"text":{"type":"text","settings":{"title":"About","content":"<p>Use this text area to tell your customers about your brand and vision. You can change it in the theme editor.<\/p>"}}},"block_order":["newsletter","links","text"],"settings":{}}},"order":["text-with-icons","footer"]}
+{
+  "type": "footer",
+  "name": "Footer group",
+  "sections": {
+    "footer": {
+      "type": "footer",
+      "blocks": {
+        "about": {
+          "type": "text",
+          "settings": {
+            "title": "Golden West Games",
+            "content": "<p>Washington's largest billiard showroom, proudly serving the Puget Sound area since 1947. Visit us to see our full selection of pool tables, cues, and game room furnishings.</p><p><strong>Hours</strong><br>Mon–Fri: 10am – 6pm<br>Sat: 10am – 5pm<br>Sun: Closed</p>",
+            "enable_follow_on_shop": false
+          }
+        },
+        "links-shop": {
+          "type": "links",
+          "settings": {
+            "menu": "footer",
+            "show_menu_title": true,
+            "menu_title": "Shop"
+          }
+        },
+        "links-info": {
+          "type": "links",
+          "settings": {
+            "menu": "footer",
+            "show_menu_title": true,
+            "menu_title": "Information"
+          }
+        },
+        "newsletter": {
+          "type": "newsletter",
+          "settings": {
+            "title": "Stay Connected",
+            "content": "<p>Get updates on new arrivals, exclusive deals, and billiard tips delivered to your inbox.</p>",
+            "button_background": "#c5a258",
+            "button_text_color": "#1a1a1a"
+          }
+        }
+      },
+      "block_order": ["about", "links-shop", "links-info", "newsletter"],
+      "settings": {
+        "color_scheme": "scheme-3",
+        "separate_section_with_border": false,
+        "show_social_media": true,
+        "show_payment_icons": true,
+        "show_powered_by_shopify": false,
+        "show_country_selector": false,
+        "show_country_name": false,
+        "show_country_flag": false,
+        "show_locale_selector": false
+      }
+    }
+  },
+  "order": ["footer"]
+}
